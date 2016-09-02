@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="../images/sLogo.png">
+        <meta charset="utf-8" />
+        <title>San Kim</title>
+        <link href="https://fonts.googleapis.com/css?family=Work+Sans:200" rel="stylesheet">
+
+        <link rel="stylesheet" href="../css/final.css">
+        
+        <script type="text/javascript" src="../js/jquery-3.1.0.min.js"></script>
+        <script src="../js/Customizable-Interactive-Particles-Animation-with-jQuery-jParticle/jparticle.jquery.js"></script>
+        
+        <link rel="stylesheet" href="../js/FadeIn-FadeOut-Animations-With-jQuery-CSS3-fadecss3-js/jquery.fadecss3.css">
+        <script src="../js/FadeIn-FadeOut-Animations-With-jQuery-CSS3-fadecss3-js/jquery.fadecss3.js"></script>               
+        <script type="text/javascript" src="../js/garand-sticky-8d501be/jquery.sticky.js"></script>
+        
+
+        
+        <script>
+            $(document).ready(function(){
+                $("h1").fadeInCss3(2500,'ease-in')
+            
+                $("#navbar a").click(function(){
+                    $(".active").removeClass("active");
+                    $(this).addClass("active");
+                });
+                
+                $("#sitenav").sticky({topSpacing:0});
+                
+                //smoothscroll
+                $(document).on("scroll", onScroll);
+                $('a[href^="#"]').on('click', function (e) {
+                    e.preventDefault();
+                    $(document).off("scroll");
+
+                    $("#sitenav a").each(function () {
+                        $(".active").removeClass("active");
+                    })
+                    $(this).addClass("active");
+
+                    var target = this.hash,
+                        menu = target;
+                    $target = $(target);
+                    $('html, body').stop().animate({
+                        'scrollTop': $target.offset().top+2
+                    }, 500, 'swing', function () {
+                        window.location.hash = target;
+                        $(document).on("scroll", onScroll);
+                    });
+                });
+            });
+            
+            function onScroll(event){
+                var scrollPos = $(document).scrollTop();
+                $('#sitenav a').each(function () {
+                    var currLink = $(this);
+                    var refElement = $(currLink.attr("href"));
+                    if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                        $('.active').removeClass("active");
+                        currLink.addClass("active");
+                    }
+                    else{
+                        currLink.removeClass("active");
+                    }
+                });
+            }
+        </script>
+
+
+    
+        <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="m-scene" id="main">
+            <div id="homepage" class="pages">
+                <div id="parti">
+                    <script id="particles">
+                        $(document).ready(function()
+                        {
+                            $("#parti").jParticle({
+                                particlesNumber: 150,
+                                linkDist: 50,
+                                disableLinks: false,
+                                disableMouse: false,
+                                createLinkDist: 200,
+                                color: '#92B9BA',
+                                width:null,
+                                height:720,
+                                background: '#fcfcfc',
+                                linksWidth: 0.5,
+                                particle: 
+                                {
+                                    color: "white",
+                                    minSize: 1,
+                                    maxSize: 1,
+                                    speed: 30
+                                }
+                            })
+
+                            $( window ).resize(function() { 
+                                $('body canvas').attr('width', $( window ).width()); 
+                                $('body canvas').attr('height', $( window ).height()); 
+                            });
+
+                        });
+                    </script>
+                </div>
+                <div id="nem">
+                    <h1 id="name">San Kim</h1>
+                </div>
+            </div>
+
+           <div id="page2" class="pages">
+                <nav id="sitenav">
+                    <ul id="navbar">
+                        <li id="nav-home-FIRST" class="notLast active"><a href="#homepage">HOME</a></li>
+                        <li id="nav-home" class="notLast"><a href="#page2">ABOUT</a></li>
+                        <li id="nav-education" class="notLast"><a href="#page3">EDUCATION</a></li>
+                        <li id="nav-work" class="notLast"><a href="#page4">WORK</a></li>
+                        <li id="nav-extraC" class="notLast"><a href="#page5">INTERESTS</a></li>
+                        <li id="nav-projects" class="notLast"><a href="#page6">PROJECTS</a></li>
+                        <li id="nav-contact-LAST"><a href="#page7">CONTACT</a></li>
+                    </ul>
+                </nav>
+
+               <p id="light">Hi! My name is San Kim, and I am a High School Senior of class 2017. I live in San Jose, California, and have recently started to develop apps and design websites.</p>
+            </div>
+
+
+
+            <div id="page3" class="pages">
+                <p>I am a Senior at Archbishop Mitty High School in San Jose, California. I have also attended Harvard Secondary School, in which I took one semester of Application Development and Website Development. I have graduated from Silicon Valley Korean School and have also been taking a competition-based JAVA course at Aceprep.</p>
+            </div>
+
+
+
+            <div id="page4" class="pages">
+                <p class="LT">I have worked as an intern at Testing House, and plan to work as a tutor in All Minds Matter.</p>
+            </div>
+
+
+
+            <div id="page5" class="pages">
+                <p class="LT scene_element--fadein"> A few of my interests and hobbies include: <a href="ComputerScience.html">computer science</a>, <a href="Winter-Sports.html"> winter sports</a>, <a href="drawing-design.html">drawing and design</a>, and <a href="breakdance.html">break dancing</a>.</p>
+            </div>
+
+
+
+            <div id="page6" class="pages">
+                <p class="LT"></p>
+                <!-- Projects: game of life app, ??? -->
+            </div>
+
+
+
+            <div id="page7" class="pages">
+                <p class="LT">Feel free to reach out with any questions!</p>
+                <br>
+                <br>
+                <a href="https://www.facebook.com/san.kim.334" target="_blank"><img class="icons" src="../images/Facebook.svg" alt=""></a>
+                <a href="../html/Emailme.html" target="_blank"><img class="icons" src="../images/email-filled-closed-envelope.svg" alt=""></a>
+                <a href="https://www.instagram.com/sankimchi/" target="_blank"><img class="icons" src="../images/instagram.svg" alt=""></a>
+            </div>
+
+            <div class="hide">Icons made by <a href="http://www.flaticon.com/authors/graphberry" title="GraphBerry">GraphBerry</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            <div class="hide">Icons made by <a href="http://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+        </div>
+    </body>
+</html>

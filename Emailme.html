@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="oc">
+    <head>
+        <meta charset="utf-8" />
+        <title>Email Me</title>
+        <style type="text/css">
+            @font-face 
+            {
+                font-family: 'LetterGothicStd';
+                src: url('LetterGothicStd.otf');
+            }
+
+            html
+            {
+                height:100%;
+                width: 100%;
+            }
+            
+            body
+            {
+                height: 100%;
+                margin: 0;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background: linear-gradient(to bottom right,#E6DADA, #375056);
+                font-family:"letter gothic std";
+                color:#373737;
+                font-weight:900;
+            }
+
+            .Inputlabels, .required
+            {
+                color:navy;
+                margin-left: 5vw;
+                margin-right: 5vw;
+            }
+            
+            fieldset
+            {
+                background-color:#F3F3F3;      
+                width:60vw;
+                color:#373737;
+                position: fixed;
+                top: 47%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                border:solid;
+                border-width: 1px;
+                border-color:#555555;
+                padding-top: 6vh;
+            }
+
+            #sender
+            {
+                margin-left: 31.15vw;
+                margin-right:31.15vw;
+                margin-bottom: 2.3vh;
+            }
+            
+            #messageINP
+            {
+                width:57.3vw;
+                height: 15vh;
+            }
+            
+            .error
+            {
+                font-size:50%;
+                color: red;
+                float:left;
+                clear: left;
+                margin-left: 5vw;
+                margin-bottom: 3px;
+                margin-top: 3px;
+                padding-bottom: 3px;
+            }
+            
+            .required
+            {
+                font-size:75%;
+                color:black;
+            }
+            
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                var validation = $("#theForm").validate({
+                           
+                    rules:
+                    {
+                        Name:{required:true},
+                        subject:{required:true},
+                        messages:{required:true}
+                    },
+                
+                    messages: 
+                    {
+                        Name:{required: jQuery.validator.format("  * What's your name? :)")},
+                        subject:{required: jQuery.validator.format("  * What's this about?")},
+                        Messages:{required: jQuery.validator.format(" *  ♪~ Say something I'm giving up on you ~♪ :-)")},
+                    }
+                })
+            })
+        </script>
+    </head>
+    
+    <body>
+        <form id="theForm" action="http://cscis12.dce.harvard.edu/echo" method="post">
+            <fieldset>
+                <br>
+                <label for="nameINP" class="Inputlabels" id="topName">Name</label>
+                <br>
+                <br>
+                <input type="text" name="Name" id="nameINP" class="required">
+                <br>
+                <br>
+                <br>
+                <label for="subjectINP" class="subjects Inputlabels">Subject</label>
+                <br>
+                <br>
+                <input type="text" name="subject" id="subjectINP" class="required">
+                <br>
+                <br>
+                <br>
+                <label for="subjectINP" class="Inputlabels" id="message" >Message</label>
+                <br>
+                <br>
+                <textarea id="messageINP" name="Messages" class="required"></textarea>
+                <br>
+                <br>
+                <br>
+                
+                <input type="submit" name="SendEmail" value="Send" id="sender"> 
+                <br>
+        </fieldset>
+           
+            
+        </form>
+    </body>
+</html>

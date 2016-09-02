@@ -1,0 +1,16 @@
+@keyframes fadein_css3_kf {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+@-webkit-keyframes fadein_css3_kf{
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+@keyframes fadeout_css3_kf {
+  0% {opacity: 1;}
+  100% {opacity: 0; visibility: hidden; }
+}
+@-webkit-keyframes fadeout_css3_kf{
+	0% {opacity:1;}
+	100% {opacity:0; visibility: hidden;}
+}
